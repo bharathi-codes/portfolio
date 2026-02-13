@@ -73,29 +73,33 @@ export default function FloatingGeometries() {
 
       {/* Additional Smaller Objects */}
       <Float speed={2.5} rotationIntensity={1.2} floatIntensity={1.2}>
-        <mesh position={[2, 3, -1]} castShadow>
-          <icosahedronGeometry args={[0.5, 0]} />
-          <meshStandardMaterial
-            color="#4ae290"
-            metalness={0.8}
-            roughness={0.2}
-            emissive="#1aa250"
-            emissiveIntensity={0.4}
-          />
-        </mesh>
+        <RigidBody type="dynamic" gravityScale={0} linearDamping={0.5} angularDamping={0.5}>
+          <mesh position={[2, 3, -1]} castShadow>
+            <icosahedronGeometry args={[0.5, 0]} />
+            <meshStandardMaterial
+              color="#4ae290"
+              metalness={0.8}
+              roughness={0.2}
+              emissive="#1aa250"
+              emissiveIntensity={0.4}
+            />
+          </mesh>
+        </RigidBody>
       </Float>
 
       <Float speed={2.2} rotationIntensity={0.9} floatIntensity={0.9}>
-        <mesh position={[-2, -2, 1]} castShadow>
-          <tetrahedronGeometry args={[0.6, 0]} />
-          <meshStandardMaterial
-            color="#904ae2"
-            metalness={0.7}
-            roughness={0.3}
-            emissive="#501aa2"
-            emissiveIntensity={0.4}
-          />
-        </mesh>
+        <RigidBody type="dynamic" gravityScale={0} linearDamping={0.5} angularDamping={0.5}>
+          <mesh position={[-2, -2, 1]} castShadow>
+            <tetrahedronGeometry args={[0.6, 0]} />
+            <meshStandardMaterial
+              color="#904ae2"
+              metalness={0.7}
+              roughness={0.3}
+              emissive="#501aa2"
+              emissiveIntensity={0.4}
+            />
+          </mesh>
+        </RigidBody>
       </Float>
     </>
   );
